@@ -29,3 +29,22 @@ def open_chrome():
 
 def open_calculator():
     sp.Popen(paths['calculator'])
+
+#Write a function to close the camera app, and call it close_camera
+def close_camera():
+    os.system('taskkill /f /im WindowsCamera.exe')
+
+def close_chrome():
+    os.system('taskkill /f /im chrome.exe')
+
+def close_calculator():
+    os.system('taskkill /f /im calculator.exe')
+
+#Write a function to close all the apps, and call it close_all
+def close_all():
+    os.system('taskkill /f /im WindowsCamera.exe')
+    os.system('taskkill /f /im chrome.exe')
+    os.system('taskkill /f /im calculator.exe')
+    os.system('taskkill /f /im Discord.exe')
+    os.system('taskkill /f /im cmd.exe')
+    os.system('taskkill /f /im notepad.exe')

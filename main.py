@@ -5,6 +5,7 @@ import speech_recognition as sr
 from decouple import config
 from datetime import datetime
 from functions.os_ops import open_calculator, open_camera, open_cmd, open_notepad, open_discord, open_chrome
+from functions.os_ops import close_camera, close_chrome, close_calculator, close_all
 from random import choice
 from utils import opening_text
 from pprint import pprint
@@ -99,6 +100,22 @@ if __name__ == '__main__':
 
         elif 'open chrome' in query:
             open_chrome()
+
+        elif 'close camera' in query:
+            close_camera()
+            speak('Camera is closed')
+
+        elif 'close chrome' in query:
+            close_chrome()
+            speak('Chrome is closed')
+
+        elif 'close calculator' in query:
+            close_calculator()
+            speak('Calculator is closed')
+
+        elif 'close all' in query:
+            close_all()
+            speak('All apps are closed')
 
         elif 'ip address' in query:
             ip_address = find_my_ip()
