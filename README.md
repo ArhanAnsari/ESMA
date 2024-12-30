@@ -12,12 +12,13 @@ Contents of .env file:
 
 ```
 USER=None
-BOTNAME=JARVIS
+BOTNAME=SIBEL
 EMAIL=None
 PASSWORD=None
 NEWS_API_KEY=None
 OPENWEATHER_APP_ID=None
 TMDB_API_KEY=None
+TMDB_READ_TOKEN_ACCESS=None
 ```
 
 Replace `None` with your values
