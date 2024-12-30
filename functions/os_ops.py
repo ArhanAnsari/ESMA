@@ -3,7 +3,8 @@ import subprocess as sp
 
 paths = {
     'notepad': "C:\\Program Files\\Notepad++\\notepad++.exe",
-    'discord': "C:\\Users\\ashut\\AppData\\Local\\Discord\\app-1.0.9003\\Discord.exe",
+    'discord': "C:\\Users\\user\\AppData\\Local\\Discord\\app-1.0.9175\\Discord.exe",
+    'chrome': "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
     'calculator': "C:\\Windows\\System32\\calc.exe"
 }
 
