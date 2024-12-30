@@ -23,9 +23,9 @@ engine.setProperty('rate', 190)
 # Set Volume
 engine.setProperty('volume', 1.0)
 
-# Set Voice (Male)
+# Set Voice (Female)
 voices = engine.getProperty('voices')
-engine.setProperty('voice', voices[0].id)
+engine.setProperty('voice', voices[1].id)
 
 
 # Text to Speech Conversion
@@ -83,7 +83,10 @@ if __name__ == '__main__':
     while True:
         query = take_user_input().lower()
 
-        if 'open notepad' in query:
+        if 'esra' in query:
+            speak("Yes sir, I am here to assist you.")
+
+        elif 'open notepad' in query:
             open_notepad()
 
         elif 'open discord' in query:
@@ -116,6 +119,9 @@ if __name__ == '__main__':
         elif 'close all' in query:
             close_all()
             speak('All apps are closed')
+
+        elif 'exit' in query or 'stop' in query:
+            speak('Exiting the program')
 
         elif 'ip address' in query:
             ip_address = find_my_ip()
