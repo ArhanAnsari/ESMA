@@ -4,7 +4,7 @@ import pyttsx3
 import speech_recognition as sr
 from decouple import config
 from datetime import datetime
-from functions.os_ops import open_calculator, open_camera, open_cmd, open_notepad, open_discord
+from functions.os_ops import open_calculator, open_camera, open_cmd, open_notepad, open_discord, open_chrome
 from random import choice
 from utils import opening_text
 from pprint import pprint
@@ -96,6 +96,9 @@ if __name__ == '__main__':
 
         elif 'open calculator' in query:
             open_calculator()
+
+        elif 'open chrome' in query:
+            open_chrome()
 
         elif 'ip address' in query:
             ip_address = find_my_ip()
