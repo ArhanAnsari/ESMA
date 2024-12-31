@@ -1,5 +1,5 @@
 import requests
-from functions.online_ops import find_my_ip, get_latest_news, get_random_advice, get_random_joke, get_trending_movies, get_weather_report, play_on_youtube, search_on_google, search_on_wikipedia, send_email, send_whatsapp_message
+from functions.online_ops import find_my_ip, get_latest_news, get_random_advice, get_random_joke, get_trending_movies, get_weather_report, play_on_youtube, search_on_google, search_on_wikipedia, send_email, send_whatsapp_message, play_song
 import pyttsx3
 import speech_recognition as sr
 from decouple import config
@@ -86,6 +86,9 @@ if __name__ == '__main__':
         if 'sibel' in query:
             speak("Yes sir, I am here to assist you.")
 
+        elif 'hi' or 'hello' in query:
+            speak("Yes sir, I am here to assist you.")
+
         elif 'open notepad' in query:
             open_notepad()
 
@@ -145,6 +148,11 @@ if __name__ == '__main__':
             speak('What do you want to search on Google, sir?')
             query = take_user_input().lower()
             search_on_google(query)
+
+        elif 'play song' in query:
+            speak('What song do you want to play, sir?')
+            song = take_user_input().lower()
+            play_song(song)
 
         elif "send whatsapp message" in query:
             speak(

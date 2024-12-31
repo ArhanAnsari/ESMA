@@ -92,3 +92,9 @@ def get_random_joke():
 def get_random_advice():
     res = requests.get("https://api.adviceslip.com/advice").json()
     return res['slip']['advice']
+
+#Adding play song feature
+def play_song(song_name):
+    kit.playonyt(song_name)
+    return f"Playing {song_name} on Youtube"
+
