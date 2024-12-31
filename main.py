@@ -83,10 +83,7 @@ if __name__ == '__main__':
     while True:
         query = take_user_input().lower()
 
-        if 'sibel' in query:
-            speak("Yes sir, I am here to assist you.")
-
-        elif 'hi' or 'hello' in query:
+        if 'sibel' in query or 'hi' in query or 'hello' in query:
             speak("Yes sir, I am here to assist you.")
 
         elif 'open notepad' in query:
