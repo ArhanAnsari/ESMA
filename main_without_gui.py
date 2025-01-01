@@ -14,7 +14,7 @@ from datetime import datetime
 from decouple import config
 from random import choice
 from const import random_text
-from online import find_my_ip, search_on_google, search_on_wikipedia, youtube, send_email, get_news, weather_forecast
+from online import find_my_ip, send_whatsapp_message, search_on_google, search_on_wikipedia, youtube, send_email, get_news, weather_forecast
 
 engine = pyttsx3.init()
 engine.setProperty('volume', 1.5)
@@ -106,18 +106,23 @@ if __name__ == '__main__':
 
             elif "open notepad" in query:
                 speak("Opening Notepad for you sir")
-                notepad_path = "C:\\Users\\ASUS\\AppData\\Local\\Microsoft\\WindowsApps\\notepad.exe"
+                notepad_path = "C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps\\notepad.exe"
                 os.startfile(notepad_path)
 
             elif "open discord" in query:
                 speak("Opening Discord for you sir")
-                discord_path = "C:\\Users\\ASUS\\AppData\\Local\\Discord\\app-1.0.9028\\Discord.exe"
+                discord_path = "C:\\Users\\user\\AppData\\Local\\Discord\\app-1.0.9175\\Discord.exe"
                 os.startfile(discord_path)
 
-            elif "open gta" in query:
-                speak("Opening Gta for you sir")
-                gta_path = "D:\\Tanishq\\GTA\\Launcher.exe"
-                os.startfile(gta_path)
+            # elif "open gta" in query:
+            #     speak("Opening Gta for you sir")
+            #     gta_path = "D:\\Tanishq\\GTA\\Launcher.exe"
+            #     os.startfile(gta_path)
+
+            elif "open chrome" in query:
+                speak("Opening Chrome for you sir")
+                chrome_path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+                os.startfile(chrome_path)
 
             elif 'ip address' in query:
                 ip_address = find_my_ip()
@@ -156,6 +161,15 @@ if __name__ == '__main__':
                     print("I have sent the email sir")
                 else:
                     speak("something went wrong Please check the error log")
+
+            elif "send whatsapp message" in query:
+                speak(
+                    'On what number should I send the message sir? Please enter in the console: ')
+                number = input("Enter the number: ")
+                speak("What is the message sir?")
+                message = take_command().lower()
+                send_whatsapp_message(number, message)
+                speak("I've sent the message sir.")
 
             elif "give me news" in query:
                 speak(f"I am reading out the latest headline of today,sir")
@@ -199,7 +213,7 @@ if __name__ == '__main__':
 
 
             elif "calculate" in query:
-                app_id = ""
+                app_id = "9A23TV-H7KL7E2VTK"
                 client = wolframalpha.Client(app_id)
                 ind = query.lower().split().index("calculate")
                 text = query.split()[ind + 1:]
@@ -241,8 +255,8 @@ if __name__ == '__main__':
                 speak("click on the search bar")
                 pyautogui.moveTo(806, 125, 1)
                 pyautogui.click(x=806, y=125, clicks=1, interval=0, button='left')
-                speak("Error by night")
-                pyautogui.typewrite("Error by night", 0.1)
+                speak("CodeWithArhan")
+                pyautogui.typewrite("CodeWithArhan", 0.1)
                 time.sleep(1)
                 speak("press enter")
                 pyautogui.press('enter')

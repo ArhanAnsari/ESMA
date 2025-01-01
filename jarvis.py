@@ -188,18 +188,23 @@ class Jarvis(widget.Widget):
 
                 elif "open notepad" in query:
                     speak("Opening Notepad for you sir")
-                    notepad_path = "C:\\Users\\ASUS\\AppData\\Local\\Microsoft\\WindowsApps\\notepad.exe"
+                    notepad_path = "C:\\Users\\user\\AppData\\Local\\Microsoft\\WindowsApps\\notepad.exe"
                     os.startfile(notepad_path)
 
                 elif "open discord" in query:
                     speak("Opening Discord for you sir")
-                    discord_path = "C:\\Users\\ASUS\\AppData\\Local\\Discord\\app-1.0.9028\\Discord.exe"
+                    discord_path = "C:\\Users\\user\\AppData\\Local\\Discord\\app-1.0.9028\\Discord.exe"
                     os.startfile(discord_path)
 
-                elif "open gta" in query:
-                    speak("Opening Gta for you sir")
-                    gta_path = "D:\\Tanishq\\GTA\\Launcher.exe"
-                    os.startfile(gta_path)
+                # elif "open gta" in query:
+                #     speak("Opening Gta for you sir")
+                #     gta_path = "D:\\Tanishq\\GTA\\Launcher.exe"
+                #     os.startfile(gta_path)
+
+                elif "open chrome" in query:
+                    speak("Opening Chrome for you sir")
+                    chrome_path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+                    os.startfile(chrome_path)
 
                 elif 'ip address' in query:
                     ip_address = find_my_ip()
@@ -286,8 +291,8 @@ class Jarvis(widget.Widget):
                     speak("click on the search bar")
                     pyautogui.moveTo(806, 125, 1)
                     pyautogui.click(x=806, y=125, clicks=1, interval=0, button='left')
-                    speak("Error by night")
-                    pyautogui.typewrite("Error by night", 0.1)
+                    speak("CodeWithArhan")
+                    pyautogui.typewrite("CodeWithArhan", 0.1)
                     time.sleep(1)
                     speak("press enter")
                     pyautogui.press('enter')

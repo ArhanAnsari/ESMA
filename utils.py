@@ -11,7 +11,7 @@ from pydub.playback import play
 from constants import (
     EMAIL,
     PASSWORD,
-    IP_ADDR_API_URL,
+    # IP_ADDR_API_URL,
     NEWS_FETCH_API_URL,
     WEATHER_FORECAST_API_URL,
     SMTP_URL,
@@ -100,3 +100,6 @@ def weather_forecast(city):
     temp = res["main"]["temp"]
     feels_like = res["main"]["feels_like"]
     return weather, f"{temp}°C", f"{feels_like}°C"
+
+def send_whatsapp_message(number, message):
+    kit.sendwhatmsg_instantly(f"+91{number}", message)
