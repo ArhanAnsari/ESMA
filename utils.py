@@ -13,11 +13,11 @@ from constants import (
     PASSWORD,
     # IP_ADDR_API_URL,
     NEWS_FETCH_API_URL,
-    WEATHER_FORECAST_API_URL,
+    # WEATHER_FORECAST_API_URL,
     SMTP_URL,
     SMTP_PORT,
     NEWS_FETCH_API_KEY,
-    WEATHER_FORECAST_API_KEY,
+    # WEATHER_FORECAST_API_KEY,
 )
 
 
@@ -89,13 +89,7 @@ def get_news():
 
 def weather_forecast(city):
     res = requests.get(
-        WEATHER_FORECAST_API_URL,
-        params={
-            "q":city,
-            "appid":WEATHER_FORECAST_API_KEY,
-            "units":"metric"
-        },
-        ).json()
+        f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid=5b41baf735106cdfd0f2fe7c00c9ff56").json()
     weather = res["weather"][0]["main"]
     temp = res["main"]["temp"]
     feels_like = res["main"]["feels_like"]
